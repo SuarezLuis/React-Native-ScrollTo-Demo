@@ -27,9 +27,11 @@ import {
 
 class App extends Component {
   scrollToTop = () => {
+    // Calling ScrollView methods via reference (refs)
     this.refs.scrollArea.scrollTo({x: 0, y: 0});
   };
   scrollToBottom = () => {
+    // Calling ScrollView methods via reference (refs)
     this.refs.scrollArea.scrollToEnd();
   };
   render() {
@@ -40,16 +42,20 @@ class App extends Component {
             <View>
               <Button
                 title="Touch me to scroll to top"
+                //Calling our method
                 onPress={() => this.scrollToTop()}
               />
               <Button
                 title="Touch me to scroll to bottom"
+                //Calling our method
                 onPress={() => this.scrollToBottom()}
               />
             </View>
           </View>
           <View style={{flex: 1, backgroundColor: 'gray'}}>
-            <ScrollView ref="scrollArea">
+            <ScrollView
+              ref="scrollArea" // This is how we can reach ScrollView methods from outside the component
+            >
               <View style={{alignItems: 'center'}}>
                 <Text>1</Text>
                 <Text>2</Text>
