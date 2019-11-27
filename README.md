@@ -9,3 +9,5 @@ cd React-Native-ScrollTo-Demo
 yarn install
 
 npx react-native run-ios
+
+![](demo.gif)
